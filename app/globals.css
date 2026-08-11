@@ -1446,3 +1446,241 @@ footer small {
     display: none;
   }
 }
+
+/* ==========================================================================
+   DESKTOP ENHANCEMENTS (1280px+)
+   Better use of horizontal space, improved typography, sophisticated layouts
+   ========================================================================== */
+
+/* Medium Desktop (1280px+) */
+@media (min-width: 1280px) {
+  /* Increase max-width for better use of screen real estate */
+  :root {
+    --max: 1380px;
+  }
+  
+  /* Hero: Better balance and scale */
+  .hero {
+    padding: 100px max(32px, calc((100vw - var(--max)) / 2)) 90px;
+    gap: 70px;
+  }
+  
+  .hero h1 {
+    font-size: 96px;
+    line-height: 0.95;
+    letter-spacing: -3.5px;
+  }
+  
+  .hero p {
+    font-size: 22px;
+    max-width: 520px;
+  }
+  
+  /* Lead story: More prominent */
+  .lead-section {
+    padding: 90px max(32px, calc((100vw - var(--max)) / 2)) 80px;
+  }
+  
+  .large-card h2 {
+    font-size: 46px;
+    line-height: 1.1;
+    letter-spacing: -1.6px;
+  }
+  
+  .large-card p {
+    font-size: 19px;
+    max-width: 640px;
+  }
+  
+  /* Frontier: 3-column grid on larger screens */
+  .frontier-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 42px;
+  }
+  
+  /* Cards grid: Better spacing */
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px;
+  }
+  
+  /* Topic grid: Better layout */
+  .topic-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 38px;
+  }
+  
+  /* Article layout: Wider reading column with better sidebar */
+  .article-layout {
+    grid-template-columns: 280px 1fr;
+    gap: 64px;
+    max-width: 1200px;
+  }
+  
+  .article-layout article {
+    max-width: 740px;
+  }
+  
+  .article-hero h1 {
+    font-size: 58px;
+    letter-spacing: -2.2px;
+    line-height: 1.05;
+  }
+  
+  .article-hero p.dek {
+    font-size: 21px;
+    max-width: 700px;
+  }
+  
+  /* Better section typography */
+  .section-heading h2 {
+    font-size: 42px;
+    letter-spacing: -1.5px;
+  }
+  
+  .section-heading p {
+    font-size: 18px;
+    max-width: 540px;
+  }
+}
+
+/* Large Desktop (1440px+) */
+@media (min-width: 1440px) {
+  :root {
+    --max: 1480px;
+  }
+  
+  /* Even more generous spacing */
+  .hero {
+    padding: 110px max(40px, calc((100vw - var(--max)) / 2)) 100px;
+    gap: 80px;
+  }
+  
+  .hero h1 {
+    font-size: 104px;
+    letter-spacing: -3.8px;
+  }
+  
+  /* Innovation spotlight: Side-by-side layout */
+  .innovation-card {
+    grid-template-columns: 1.1fr 1fr;
+    gap: 60px;
+  }
+  
+  .innovation-card-copy h3 {
+    font-size: 36px;
+  }
+  
+  /* Frontier: Even better spacing */
+  .frontier-grid {
+    gap: 48px;
+  }
+  
+  .frontier-item h3 {
+    font-size: 24px;
+  }
+  
+  /* Cards: 4-column grid for more content density */
+  .cards-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+  
+  /* Topic grid: More generous */
+  .topic-grid {
+    gap: 44px;
+  }
+  
+  /* Article improvements */
+  .article-layout {
+    max-width: 1280px;
+    gap: 72px;
+  }
+  
+  .article-layout article {
+    max-width: 780px;
+    font-size: 19px;
+    line-height: 1.7;
+  }
+  
+  .article-layout article h2 {
+    font-size: 32px;
+  }
+  
+  /* Better evidence card */
+  .evidence-card {
+    padding: 26px;
+  }
+  
+  /* Research box enhancement */
+  .research-box {
+    padding: 38px 42px;
+  }
+}
+
+/* Extra Large Desktop (1600px+) */
+@media (min-width: 1600px) {
+  :root {
+    --max: 1560px;
+  }
+  
+  /* Maximum comfortable reading width */
+  .hero {
+    padding: 120px max(48px, calc((100vw - var(--max)) / 2)) 110px;
+  }
+  
+  .hero h1 {
+    font-size: 112px;
+  }
+  
+  /* Frontier: 4-column layout for content richness */
+  .frontier-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 44px;
+  }
+  
+  /* Article: Optimal reading experience */
+  .article-layout {
+    max-width: 1360px;
+    gap: 80px;
+  }
+  
+  .article-layout article {
+    max-width: 820px;
+    font-size: 20px;
+  }
+  
+  /* Section headings scale */
+  .section-heading h2 {
+    font-size: 48px;
+  }
+}
+
+/* Ultra Wide (1920px+) */
+@media (min-width: 1920px) {
+  :root {
+    --max: 1680px;
+  }
+  
+  /* Maintain readability at very large sizes */
+  .hero h1 {
+    font-size: 120px;
+  }
+  
+  /* Article never exceeds comfortable reading width */
+  .article-layout article {
+    max-width: 860px;
+  }
+  
+  /* Cards: Maximum 4 columns for readability */
+  .cards-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+  }
+  
+  /* Better whitespace everywhere */
+  section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
