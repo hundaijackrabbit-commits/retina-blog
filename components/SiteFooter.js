@@ -1,0 +1,2 @@
+import Link from 'next/link';
+export default function SiteFooter(){return <footer><div><div className="brand footer-brand">RETINA<span>.</span>BLOG</div><p>See what’s next in retinal science, imaging and care.</p></div><div className="footer-links"><Link href="/about">About</Link><Link href="/editorial-standards">Editorial standards</Link><a href="mailto:editor@retina.blog">Contact</a></div><small>© 2026 Retina.blog · Educational editorial content, not medical advice.</small></footer>}
