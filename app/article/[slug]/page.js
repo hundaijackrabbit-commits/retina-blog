@@ -100,7 +100,13 @@ export default async function ArticlePage({ params }) {
                 {a.references.map(ref => (
                   <li key={`${ref.title}-${ref.url}`}>
                     <a href={ref.url} target="_blank" rel="noreferrer">{ref.title}</a>
-                    <span>{ref.publisher}{ref.type ? ` · ${ref.type}` : ''}</span>
+                    <span>{[
+                      ref.publisher,
+                      ref.year,
+                      ref.type,
+                      ref.pmid ? `PMID ${ref.pmid}` : null,
+                      ref.doi ? `DOI ${ref.doi}` : null
+                    ].filter(Boolean).join(' · ')}</span>
                   </li>
                 ))}
               </ol>

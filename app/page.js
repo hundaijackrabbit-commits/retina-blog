@@ -10,6 +10,7 @@ export default function Home() {
   const researchArticles = articles.slice(4, 8);
   const innovationArticle = articles.find(a => a.tag === 'INNOVATION SPOTLIGHT') || articles[4];
   const industryArticles = articles.filter(a => a.category === 'Industry').slice(0, 3);
+  const imagingDesk = articles.filter(a => a.category === 'Imaging').slice(0, 4);
   
   return (
     <main>
@@ -115,9 +116,26 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Imaging Desk */}
+      {imagingDesk.length > 0 && (
+        <section className="latest imaging-desk-home">
+          <div className="section-heading">
+            <div>
+              <div className="section-kicker"><span>05</span> IMAGING DESK</div>
+              <h2>How the retina becomes data.</h2>
+            </div>
+            <p>Deep guides to OCT, OCTA, angiography, artifacts and the technologies changing what can be measured.</p>
+          </div>
+          <div className="cards-grid">
+            {imagingDesk.map(a => <ArticleCard key={a.slug} article={a} />)}
+          </div>
+          <div className="section-action"><Link href="/topic/imaging">Explore Imaging →</Link></div>
+        </section>
+      )}
+
       {/* Explore Topics */}
       <section className="topics">
-        <div className="section-kicker"><span>05</span> EXPLORE</div>
+        <div className="section-kicker"><span>06</span> EXPLORE</div>
         <div className="topic-grid">
           {topics.map((t, i) => (
             <Link key={t.slug} href={`/topic/${t.slug}`}>
@@ -135,7 +153,7 @@ export default function Home() {
         <section className="latest industry-watch-home">
           <div className="section-heading">
             <div>
-              <div className="section-kicker"><span>06</span> INDUSTRY WATCH</div>
+              <div className="section-kicker"><span>07</span> INDUSTRY WATCH</div>
               <h2>Where science becomes a market.</h2>
             </div>
             <p>Regulation, platforms, trials and business-model shifts that could change how retinal care is delivered.</p>
