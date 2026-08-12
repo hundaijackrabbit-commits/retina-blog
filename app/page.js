@@ -9,6 +9,7 @@ export default function Home() {
   const frontierArticles = articles.slice(1, 5);
   const researchArticles = articles.slice(4, 8);
   const innovationArticle = articles.find(a => a.tag === 'INNOVATION SPOTLIGHT') || articles[4];
+  const industryArticles = articles.filter(a => a.category === 'Industry').slice(0, 3);
   
   return (
     <main>
@@ -128,6 +129,23 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* Industry Watch */}
+      {industryArticles.length > 0 && (
+        <section className="latest industry-watch-home">
+          <div className="section-heading">
+            <div>
+              <div className="section-kicker"><span>06</span> INDUSTRY WATCH</div>
+              <h2>Where science becomes a market.</h2>
+            </div>
+            <p>Regulation, platforms, trials and business-model shifts that could change how retinal care is delivered.</p>
+          </div>
+          <div className="cards-grid">
+            {industryArticles.map(a => <ArticleCard key={a.slug} article={a} />)}
+          </div>
+          <div className="section-action"><Link href="/topic/industry">Explore Industry →</Link></div>
+        </section>
+      )}
 
       {/* The Retina as a Window */}
       <section className="window">
